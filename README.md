@@ -1,120 +1,109 @@
 # Hi, I'm Mikael 👋
 
-🇧🇷 [Leia em Português](#olá-eu-sou-o-mikael-)
+**Fullstack Engineer · 6+ years · TypeScript, React/Next.js, Node.js/Bun, AWS**
 
-I got into development building games in Unity3D and never stopped. What kept me here wasn't the tech itself, but the feeling of turning an idea into something that works. I've been doing that professionally for 6+ years, now focused on web, mobile, and backend systems.
-
-I care about solving real problems, not just writing code.
-
----
-
-## What I'm building right now
-
-| Project | Description |
-|---|---|
-| [NexusCRM](https://github.com/MikaelMarceniuk/nexus-crm) | Fullstack CRM for businesses that communicate through WhatsApp, with real-time messaging and automated workflows |
-| [Speaker Trainer for Business](https://github.com/MikaelMarceniuk/speaker-trainer-for-business) | AI-powered app for deliberate speaking practice under professional pressure, with automated feedback across 5 criteria |
-
----
-
-## Stack I actually enjoy working with
-
-![Next.js](https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white)
-![Elysia.js](https://img.shields.io/badge/Elysia.js-000000?logo=bun&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?logo=postgresql&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-232F3E?logo=amazonaws&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
-![React Native](https://img.shields.io/badge/React_Native-20232A?logo=react&logoColor=61DAFB)
-![NestJS](https://img.shields.io/badge/NestJS-E0234E?logo=nestjs&logoColor=white)
-
----
-
-## Projects
-
-| Project | Stack | Description |
-|---|---|---|
-| [NexusCRM](https://github.com/MikaelMarceniuk/nexus-crm) | Next.js, Elysia, PostgreSQL, Docker | Fullstack CRM with WhatsApp Business API integration |
-| [Speaker Trainer](https://github.com/MikaelMarceniuk/speaker-trainer-for-business) | Next.js, Elysia, LLM, Speech-to-Text | AI speaking trainer for professionals |
-
----
-
-## GitHub Stats
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=MikaelMarceniuk&layout=compact&theme=dark&hide_border=true&bg_color=0a0d14&title_color=f8fafc&text_color=94a3b8)
-
----
-
-## Outside of code
-
-I study theatre, now in my third year, leaning into political and contemporary work. It's where my artistic side lives: I write, consume culture, and think about communication differently because of it.
-
-I'm also learning Russian (B2) and Japanese (A1) at the same time, because apparently I enjoy complex systems.
-
----
-
-## Let's talk
+🌎 **Open to international opportunities** · Remote from Brazil (UTC-3, overlaps with US & EU) · English: fluent
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-mmarceniuk.dev-0a0d14?style=flat&logo=vercel&logoColor=white)](https://mmarceniuk.dev)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Mikael_Marceniuk-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mikael-marceniuk/)
 [![Email](https://img.shields.io/badge/Email-mikael@mmarceniuk.dev-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:mikael@mmarceniuk.dev)
 
----
+🇧🇷 [Leia em Português](README.pt-BR.md)
 
 ---
 
-# Olá, eu sou o Mikael 👋
+I got into development building games in Unity3D and never stopped. What kept me here wasn't the tech itself, but the feeling of turning an idea into something that works. Today I build web, mobile, and backend systems across betting, enterprise automation, and logistics, and I'm comfortable owning delivery end to end, from architecture decisions to production.
 
-🇺🇸 [Read in English](#hi-im-mikael-)
+## Impact highlights
 
-Entrei no desenvolvimento criando jogos na Unity3D e nunca parei. O que me prendeu não foi a tecnologia em si, mas a sensação de transformar uma ideia em algo que funciona. Faço isso profissionalmente há mais de 6 anos, hoje focado em sistemas web, mobile e backend.
-
-Me importo em resolver problemas reais, não só escrever código.
-
----
-
-## O que estou construindo agora
-
-| Projeto | Descrição |
-|---|---|
-| [NexusCRM](https://github.com/MikaelMarceniuk/nexus-crm) | CRM fullstack para empresas que se comunicam pelo WhatsApp, com mensagens em tempo real e automação de fluxos |
-| [Speaker Trainer for Business](https://github.com/MikaelMarceniuk/speaker-trainer-for-business) | App com IA para prática deliberada de comunicação profissional sob pressão, com feedback automático em 5 critérios |
+- **Real-time failover on AWS.** Built an automated failover system across microservices that detects provider outages and switches over in real time, keeping a regulated betting platform available.
+- **Billions of records, zero data loss.** Took part in a cross-continental migration from the EU to Brazil using AWS and Python.
+- **~10% revenue growth.** Developed a fullstack referral system in a 2-person team.
+- **4 days → 2 hours.** Designed an automation pipeline integrating 3 databases with Lecom, DocuSign, and Feedz via REST APIs.
+- **Millions of rows without blocking the API.** Architected an AWS message queue to process Excel uploads asynchronously for an AbInBev product, delivered solo in 2 weeks.
 
 ---
 
-## Stack que gosto de trabalhar
+## Featured work
 
+### [Collaborative Text Editor](https://collaborative-text-editor.mmarceniuk.dev/)
+
+<img src="assets/collaborative-text-editor-mockup.webp" alt="Collaborative Text Editor" width="720">
+
+A simplified Google Docs-style editor with rich text, autosave, and guest mode. The product is deliberately simple so the effort goes into sync and persistence engineering.
+
+- Documents are modeled as a **CRDT with Yjs**: the server receives binary updates and merges them before persisting to MongoDB, so concurrent edits converge without locks or last-write-wins.
+- Writes are guarded by optimistic concurrency, and autosave is debounced with exponential backoff and a final flush when the tab closes.
+- Guest mode: anyone can start writing without signing up, their documents move to the account once they register.
+- Monorepo with separate CI for web and server; a release only ships when both pass (API on Fly.io, web on Vercel).
+
+**Stack:** React, TypeScript, Tiptap, Yjs, Express, MongoDB, Better Auth, GitHub Actions<br>
+**Links:** [Live demo](https://collaborative-text-editor.mmarceniuk.dev/) · [Source code](https://github.com/MikaelMarceniuk/collaborative-text-editor)
+
+### [Dalua.top](https://dalua.top/) · _Freelance_
+
+<img src="assets/dalua-mockup.webp" alt="Dalua.top" width="720">
+
+Full online store for a hair care brand: catalog, cart, Mercado Pago checkout, shipping quotes from Melhor Envio, and an admin panel where the owner manages products, orders, coupons, and content without a developer in the loop.
+
+- Ran on a hosting plan the client already paid for, with MySQL and no external access: migrations apply automatically on server boot, and builds run in GitHub Actions and are published to a deploy branch.
+- Payment and shipping providers connected over **OAuth2** by the store owner, with tokens encrypted with **AES-256-GCM** and refreshed inside a row-locked transaction, since the refresh token is single-use.
+- Images converted to WebP on the server, testimonial videos converted in the browser.
+
+**Stack:** Next.js, TypeScript, MySQL, Drizzle, Better Auth, Mercado Pago, Melhor Envio, GitHub Actions<br>
+**Links:** [Live site](https://dalua.top/) · Client project, private source
+
+### [Higher Up Business English](https://higher-up.com.br/) · _Freelance_
+
+<img src="assets/higher-up-mockup.webp" alt="Higher Up Business English" width="720">
+
+Website for the only company in Brazil using the BELF methodology (Business English as a Lingua Franca), built to rank on Google and turn visits into leads.
+
+- Pages per solution and audience (companies, professionals, startups, teachers), so each visitor lands on a page written for them.
+- Bilingual (Portuguese and English) with next-intl and locale-based routes, plus generated metadata, sitemap, and robots for SEO.
+- Cookie-less analytics with Umami, so the site needs no consent banner. Shipped as a Docker image built by GitHub Actions.
+
+**Stack:** Next.js, TypeScript, next-intl, Umami, Docker, GitHub Actions<br>
+**Links:** [Live site](https://higher-up.com.br/) · Client project, private source
+
+---
+
+## Tech stack
+
+**Frontend**<br>
+![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
 ![Next.js](https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white)
-![Elysia.js](https://img.shields.io/badge/Elysia.js-000000?logo=bun&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-0F172A?logo=tailwindcss&logoColor=38BDF8)
+![React Native](https://img.shields.io/badge/React_Native-20232A?logo=react&logoColor=61DAFB)
+
+**Backend**<br>
+![Node.js](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white)
+![Bun](https://img.shields.io/badge/Bun-000000?logo=bun&logoColor=white)
+![Elysia.js](https://img.shields.io/badge/Elysia.js-000000?logo=bun&logoColor=white)
+![NestJS](https://img.shields.io/badge/NestJS-E0234E?logo=nestjs&logoColor=white)
+![Go](https://img.shields.io/badge/Go-00ADD8?logo=go&logoColor=white)
+![GraphQL](https://img.shields.io/badge/GraphQL-E10098?logo=graphql&logoColor=white)
+
+**Data**<br>
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?logo=postgresql&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white)
+
+**Cloud & DevOps**<br>
 ![AWS](https://img.shields.io/badge/AWS-232F3E?logo=amazonaws&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
-![React Native](https://img.shields.io/badge/React_Native-20232A?logo=react&logoColor=61DAFB)
-![NestJS](https://img.shields.io/badge/NestJS-E0234E?logo=nestjs&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=githubactions&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-7B42BC?logo=terraform&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white)
 
 ---
 
-## Projetos
+## Outside of code
 
-| Projeto | Stack | Descrição |
-|---|---|---|
-| [NexusCRM](https://github.com/MikaelMarceniuk/nexus-crm) | Next.js, Elysia, PostgreSQL, Docker | CRM fullstack com integração WhatsApp Business API |
-| [Speaker Trainer](https://github.com/MikaelMarceniuk/speaker-trainer-for-business) | Next.js, Elysia, LLM, Speech-to-Text | Treinador de comunicação com IA para profissionais |
-| [Higher-Up](https://github.com/MikaelMarceniuk/higher-up) | Next.js, TypeScript | Landing page para empresa de Business English |
+I study theatre, now in my third year, focused on contemporary work. It shapes how I think about communication, on stage and in a team.
 
----
+I read a lot, mostly software books, books about people, and horror and detective fiction. Currently reading *A Philosophy of Software Design*, *The Pragmatic Programmer*, and *Never Split the Difference*. Recent favorites: *A Head Full of Ghosts* by Paul Tremblay and *The Good Son* by You-jeong Jeong.
 
-## Fora do código
-
-Estudo teatro, atualmente no terceiro ano, com foco em teatro político e contemporâneo. É onde vive meu lado artístico: escrevo, consumo cultura e penso sobre comunicação de um jeito diferente por causa disso.
-
-Também estudo russo (B2) e japonês (A1) ao mesmo tempo, porque aparentemente gosto de sistemas complexos.
-
----
-
-## Contato
-
-[![Portfólio](https://img.shields.io/badge/Portfólio-mmarceniuk.dev-0a0d14?style=flat&logo=vercel&logoColor=white)](https://mmarceniuk.dev)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Mikael_Marceniuk-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mikael-marceniuk/)
-[![Email](https://img.shields.io/badge/Email-mikael@mmarceniuk.dev-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:mikael@mmarceniuk.dev)
+I'm also learning Russian (B2) and Japanese (A1) at the same time, because apparently I enjoy complex systems.
